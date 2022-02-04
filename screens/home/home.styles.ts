@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '../../components/button';
 
 export const Container = styled.div`
   width: 100%;
@@ -6,6 +7,8 @@ export const Container = styled.div`
   padding: 20px;
 
   background-color: #fff;
+
+  box-sizing: border-box !important;
 `;
 
 export const Navbar = styled.nav`
@@ -17,19 +20,8 @@ export const Title = styled.h1`
   font-size: 30px;
 `;
 
-export const ButtonAdd = styled.button`
-  width: 45px;
-  height: 45px;
-
-  border-radius: 8px;
-  background-color: #3E83F4;
-  font-size: 20px;
-  color: #fff;
-
+export const ButtonAdd = styled(Button)`
   position: absolute;
   bottom: 20px;
   right: 20px;
-  border: none;
-
-  box-shadow: #9ABDF6   0 0 12px;
 `;

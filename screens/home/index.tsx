@@ -10,7 +10,7 @@ const Home: FC = () => (
       <Title>Today</Title>
     </Navbar>
 
-    <ButtonAdd>+</ButtonAdd>
+    <ButtonAdd size="AUTO">+</ButtonAdd>
   </Container>
 );
 
