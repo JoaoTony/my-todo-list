@@ -7,8 +7,6 @@ export const Container = styled.div`
   padding: 20px;
 
   background-color: #fff;
-
-  box-sizing: border-box !important;
 `;
 
 export const Navbar = styled.nav`
@@ -24,4 +22,10 @@ export const ButtonAdd = styled(Button)`
   position: absolute;
   bottom: 20px;
   right: 20px;
+`;
+
+export const CardList = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 `;

@@ -1,17 +1,34 @@
 import { FC } from 'react';
 
 import {
-  Container, Title, Navbar, ButtonAdd,
+  Container,
+  Title,
+  Navbar,
+  ButtonAdd,
+  CardList,
 } from './home.styles';
 
-const Home: FC = () => (
-  <Container>
-    <Navbar>
-      <Title>Today</Title>
-    </Navbar>
+const Home: FC = () => {
+  const todoList = [0, 1, 2, 3, 4];
 
-    <ButtonAdd size="AUTO">+</ButtonAdd>
-  </Container>
-);
+  return (
+    <Container>
+      <Navbar>
+        <Title>Today</Title>
+      </Navbar>
+
+      <CardList>
+        {todoList.map((item) => (
+          <div>
+            {item}
+            -Div
+          </div>
+        ))}
+      </CardList>
+
+      <ButtonAdd size="AUTO">+</ButtonAdd>
+    </Container>
+  );
+};
 
 export default Home;
