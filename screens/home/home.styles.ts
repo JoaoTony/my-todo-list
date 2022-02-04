@@ -6,7 +6,7 @@ export const Container = styled.div`
   height: 100vh;
   padding: 20px;
 
-  background-color: #fff;
+  background-color: #FCFCFC ;
 `;
 
 export const Navbar = styled.nav`

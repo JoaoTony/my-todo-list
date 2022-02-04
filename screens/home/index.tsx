@@ -8,6 +8,10 @@ import {
   CardList,
 } from './home.styles';
 
+import { fakeData } from './fake-data';
+
+import TODOCard from '../../components/todo-card';
+
 const Home: FC = () => {
   const todoList = [0, 1, 2, 3, 4];
 
@@ -18,11 +22,8 @@ const Home: FC = () => {
       </Navbar>
 
       <CardList>
-        {todoList.map((item) => (
-          <div>
-            {item}
-            -Div
-          </div>
+        {fakeData.map((item) => (
+          <TODOCard key={item.id.toString()} level={item.level} title={item.title} />
         ))}
       </CardList>
 
