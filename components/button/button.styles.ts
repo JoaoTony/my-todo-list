@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Button = styled.button<{ size: 'FULL' | 'AUTO' }>`
-  width: ${({ size }) => (size === 'FULL' ? 'stretch' : '45px')};
+  width: ${({ size }) => (size === 'FULL' ? 'calc(100% - 40px)' : '45px')};
   height: 45px;
 
   border-radius: 8px;
@@ -13,4 +13,6 @@ export const Button = styled.button<{ size: 'FULL' | 'AUTO' }>`
   border: none;
 
   box-shadow: #9ABDF6   0 0 12px;
+
+  transition: all ease-out 0.5s;
 `;

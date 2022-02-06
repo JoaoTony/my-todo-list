@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState, useCallback } from 'react';
 
 import {
   Container,
@@ -11,24 +11,45 @@ import {
 import { fakeData } from './fake-data';
 
 import TODOCard from '../../components/todo-card';
+import Modal from '../modal';
 
 const Home: FC = () => {
-  const todoList = [0, 1, 2, 3, 4];
+  const [showModal, setShowModal] = useState(false);
+
+  const handleModal = useCallback((isOpen: boolean) => {
+    setShowModal(isOpen);
+  }, [showModal]);
 
   return (
-    <Container>
-      <Navbar>
-        <Title>Today</Title>
-      </Navbar>
+    <>
+      <Container visible={showModal}>
+        <Navbar>
+          <Title>Today</Title>
+        </Navbar>
 
-      <CardList>
-        {fakeData.map((item) => (
-          <TODOCard key={item.id.toString()} level={item.level} title={item.title} />
-        ))}
-      </CardList>
+        <CardList>
+          {fakeData.map((item) => (
+            <TODOCard
+              key={item.id.toString()}
+              level={item.level as any}
+              title={item.title}
+            />
+          ))}
+        </CardList>
 
-      <ButtonAdd size="AUTO">+</ButtonAdd>
-    </Container>
+      </Container>
+      <Modal
+        visible={showModal}
+        handleModal={() => handleModal(false)}
+      />
+
+      <ButtonAdd
+        size={showModal ? 'FULL' : 'AUTO'}
+        onClick={() => handleModal(true)}
+      >
+        {showModal ? 'Done' : '+'}
+      </ButtonAdd>
+    </>
   );
 };
 

@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 import Button from '../../components/button';
 
-export const Container = styled.div`
+export const Container = styled.div<{ visible: boolean}>`
   width: 100%;
   height: 100vh;
   padding: 20px;
 
   background-color: #FCFCFC ;
+
+  transform: ${({ visible }) => (visible ? ' translate(-100px, -100px) ' : 0)};
+
+  transition: all ease-out 0.5s;
 `;
 
 export const Navbar = styled.nav`
@@ -22,6 +26,8 @@ export const ButtonAdd = styled(Button)`
   position: absolute;
   bottom: 20px;
   right: 20px;
+
+  z-index: 5;
 `;
 
 export const CardList = styled.div`
