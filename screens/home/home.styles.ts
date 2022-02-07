@@ -23,11 +23,11 @@ export const Title = styled.h1`
 `;
 
 export const ButtonAdd = styled(Button)`
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
 
-  z-index: 5;
+  z-index: 20000;
 `;
 
 export const CardList = styled.div`
