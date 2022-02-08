@@ -97,3 +97,18 @@ export const Checkbox = styled.input`
 
   border: red;
 `;
+
+export const ModalLevelWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+
+  div {
+    input{
+      margin: 0
+    }
+    margin: 0;
+    margin-bottom: 10px;
+  }
+`;

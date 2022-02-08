@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 import { LevelType } from './todo-card.types';
-import { chooseColor } from './todo-card.utils';
+import { colors } from '../../utils/colors';
+import { chooseElementFromObject } from '../../utils/chosse-element-from-obj';
 
 export const Container = styled.div`
   width: 100%;
@@ -42,12 +43,12 @@ export const Level = styled.div<{level: LevelType }>`
   padding: 2px;
   text-align:center;
   border-radius: 2px;
-  background-color: ${({ level }) => `${chooseColor(level)}31`};
+  background-color: ${({ level }) => `${chooseElementFromObject(colors.level, level)}31`};
   align-self: flex-start;
 
   p{
     margin: 0;
-    color: ${({ level }) => chooseColor(level)};
+    color: ${({ level }) => chooseElementFromObject(colors.level, level)};
     font-size: 11px;
   }
 
