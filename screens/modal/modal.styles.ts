@@ -38,7 +38,7 @@ export const Modal = styled.div<{ visible: boolean}>`
 
   .subTitle {
     font-size: 12px;
-    color: #BBBBBB ;
+    color: #BBBBBB;
     margin: 0;
     display: ${({ visible }) => (visible ? 'block' : 'none')};
 
